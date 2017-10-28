@@ -25,8 +25,9 @@ import models.Rating;
 	
 public class BestMovie4uAPI {
 	private Serializer serializer;
-	private Map<String, User> users = new HashMap<>();
-	//private List <User> users = new ArrayList<User>();
+	private Map<String, User> userList = new HashMap<>();
+	private Map<String, Movie> moviesList = new HashMap<>();
+	private Map<String, Rating> ratingList = new HashMap<>();
 	
 	public BestMovie4uAPI() {
 	}
@@ -38,27 +39,27 @@ public class BestMovie4uAPI {
 	@SuppressWarnings("unchecked")
 	public void load() throws Exception{
 		serializer.read();
-		users = (Map<String, User>) serializer.pop();
+		userList = (Map<String, User>) serializer.pop();
 	}
 	
 	void store() throws Exception{
-		serializer.push(users);
+		serializer.push(userList);
 		serializer.write();
 	}
 	
 	 public Collection<User> getUsers ()
 	  {
-	    return users.values();
+	    return userList.values();
 	  }
 	
 	public User addUser(String id, String firstName, String lastName,int age,String gender , String occupation){
 		User user = new User (id,firstName, lastName, age,gender,occupation);
-		users.put(id, user);
+		userList.put(id, user);
 		return user;
 	}
 		
 	public void removeUser(String id){
-		users.remove(id);
+		userList.remove(id);
 	}
 		
 	public void	addMovie(String title, String year, String url){
@@ -72,7 +73,7 @@ public class BestMovie4uAPI {
 		
 	 public User getUser(String id) 
 	  {
-		 return users.get(id);
+		 return userList.get(id);
 	  }
 	 
 	public void	getMovie(String movieID){
@@ -98,7 +99,7 @@ public class BestMovie4uAPI {
 			
 		}
 	
-	/*
+	
 	public void load(File file) throws Exception{
 		ObjectInputStream is = null;
 		try {
@@ -113,7 +114,7 @@ public class BestMovie4uAPI {
 		}
 		
 	}
-	
+	/*
 	@SuppressWarnings("unchecked")
 	  void load(File file) throws Exception
 	  {
