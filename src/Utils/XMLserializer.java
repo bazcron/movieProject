@@ -11,6 +11,7 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
 public class XMLserializer implements Serializer{
+	@SuppressWarnings("rawtypes")
 	private Stack stack = new Stack();
 	private File file;
 	
@@ -18,14 +19,18 @@ public class XMLserializer implements Serializer{
 		this.file = file;
 	}
 	
+	@Override
+	@SuppressWarnings("unchecked")
 	public void push(Object movieInfo) {
 		stack.push(movieInfo);
 	}
 	
+	@Override
 	public Object pop() {
 		return stack.pop();
 	}
 	
+	@Override
 	public void	read() throws Exception{
 		ObjectInputStream is = null;
 		try {
@@ -45,6 +50,7 @@ public class XMLserializer implements Serializer{
 		}
 }
 	
+	@Override
 	public void	write() throws Exception{
 		ObjectOutputStream os = null;
 		try {

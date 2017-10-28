@@ -4,7 +4,6 @@ package controllers;
 
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
@@ -99,15 +98,13 @@ public class BestMovie4uAPI {
 			
 		}
 	
-	
-	@SuppressWarnings("unchecked")
+	/*
 	public void load(File file) throws Exception{
 		ObjectInputStream is = null;
 		try {
 			XStream xstream = new XStream(new DomDriver());
 			is = xstream.createObjectInputStream(new FileReader(file));
 			//.....something here
-			users= (Map<String, User>)is.readObject();
 		}
 		finally {
 			if(is !=null) {
@@ -117,14 +114,65 @@ public class BestMovie4uAPI {
 		
 	}
 	
-	void store(File file) throws Exception
+	@SuppressWarnings("unchecked")
+	  void load(File file) throws Exception
+	  {
+	    ObjectInputStream is = null;
+	    try
+	    {
+	      XStream xstream = new XStream(new DomDriver());
+	      is = xstream.createObjectInputStream(new FileReader(file));
+	      userIndex       = (Map<Long, User>)     is.readObject();
+	      
+	    }
+	    finally
+	    {
+	      if (is != null)
+	      {
+	        is.close();
+	      }
+	    }
+	  }
+
+	  void store(File file) throws Exception
 	  {
 	    XStream xstream = new XStream(new DomDriver());
 	    ObjectOutputStream out = xstream.createObjectOutputStream(new FileWriter(file));
-	    out.writeObject(users);
+	    out.writeObject(userIndex);
+	    out.writeObject(emailIndex);
+	    out.writeObject(activitiesIndex);
 	    out.close(); 
 	  }
-			
+	  */
+	
+	/*
+	public void store(File file) throws Exception{
+		XStream xstream = new XStream(new DomDriver());
+		ObjectOutputStream out =xstream.createObjectOutputStream(new FileReader(file));
+		//out.writeObject(......);
+		//out.writeObject(...);
+		out.close();
+	}
+		
+	
+				
+		
+	public void	write() throws Exception{
+			ObjectOutputStream os = null;
+			try {
+				XStream xstream = new XStream(new DomDriver());
+				os = xstream.createObjectOutputStream(new FileReader(file));
+				while(!stack.empty()) {
+					os.writeObject(stack.pop());
+				}
+			}
+				finally {
+					if(os !=null) {
+						os.close();
+					}
+				}
+			}
+			*/
 				
 		
 	

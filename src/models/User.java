@@ -1,6 +1,5 @@
 package models;
 
-import java.util.Objects;
 import static com.google.common.base.MoreObjects.toStringHelper;
 
 public class User {
