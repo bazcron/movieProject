@@ -30,6 +30,7 @@ public class XMLserializer implements Serializer{
 		return stack.pop();
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public void	read() throws Exception{
 		ObjectInputStream is = null;
