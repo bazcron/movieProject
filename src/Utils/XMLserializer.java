@@ -38,10 +38,9 @@ public class XMLserializer implements Serializer{
 			XStream xstream = new XStream(new DomDriver());
 			is = xstream.createObjectInputStream(new FileReader(file));
 			Object obj = is.readObject();
-			while(obj != null) {
-				stack.push(obj);
-				obj= is.readObject();
-			}
+			
+				stack = (Stack)is.readObject();
+			
 		}
 		finally {
 			if(is != null)
@@ -57,9 +56,9 @@ public class XMLserializer implements Serializer{
 		try {
 			XStream xstream = new XStream(new DomDriver());
 			os = xstream.createObjectOutputStream(new FileWriter(file));
-			while(!stack.empty()) {
+			
 				os.writeObject(stack);
-			}
+			
 		}
 			finally {
 				if(os !=null) {
