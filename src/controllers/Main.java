@@ -23,7 +23,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 	
-		File movieInfo = new File("movieInfo2.xml");	
+		File movieInfo = new File("movieInfo.xml");	
 		Serializer serializer = new XMLserializer(movieInfo);
 		BestMovie4uAPI bestMovie4uApi = new BestMovie4uAPI(serializer);
 		
