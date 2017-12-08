@@ -2,6 +2,7 @@ package tester;
 
 import static org.junit.Assert.*;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.junit.Test;
@@ -17,7 +18,7 @@ public class UserTest
   @Test
   public void testCreate()
   {
-	  assertEquals ("6", homer.id);
+	assertEquals ("6", homer.id);
     assertEquals ("homer", homer.firstName);
     assertEquals ("simpson", homer.lastName);
     assertEquals (5,   homer.age);   
@@ -39,6 +40,15 @@ public class UserTest
   @Test
   public void testToString()
   {
-    assertEquals ("User{" + ", 6,homer, simpson, 5, m,plumber}", homer.toString());
+    assertEquals ("User{" + " 6, homer, simpson, 5, m, plumber}", homer.toString());
   }
+  
+  @Test
+  public void getUsers()
+  {
+	 // Collection<User> users = bestMovie4uApi.getUsers();
+	  
+		 System.out.println(users);
+  }
+  
 }

@@ -2,6 +2,8 @@ package models;
 
 import static com.google.common.base.MoreObjects.toStringHelper;
 
+import com.google.common.base.Objects;
+
 public class User {
 	
   public String firstName;
@@ -36,13 +38,13 @@ public class User {
 							   .addValue(occupation)
                                .toString();
   }
-  /*
+  
   @Override  
   public int hashCode()  
   {  
      return Objects.hashCode(this.id, this.firstName,  this.lastName, this.age, this.gender, this.occupation);  
   }
-	*/
+	
 }
 	
 

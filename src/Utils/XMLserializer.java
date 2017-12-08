@@ -29,18 +29,14 @@ public class XMLserializer implements Serializer{
 	public Object pop() {
 		return stack.pop();
 	}
-	
-	@SuppressWarnings("unchecked")
+
 	@Override
 	public void	read() throws Exception{
 		ObjectInputStream is = null;
 		try {
 			XStream xstream = new XStream(new DomDriver());
 			is = xstream.createObjectInputStream(new FileReader(file));
-			Object obj = is.readObject();
-			
-				stack = (Stack)is.readObject();
-			
+			stack = (Stack) is.readObject();
 		}
 		finally {
 			if(is != null)
@@ -56,9 +52,8 @@ public class XMLserializer implements Serializer{
 		try {
 			XStream xstream = new XStream(new DomDriver());
 			os = xstream.createObjectOutputStream(new FileWriter(file));
-			
-				os.writeObject(stack);
-			
+			 os.writeObject(stack);
+
 		}
 			finally {
 				if(os !=null) {

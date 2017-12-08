@@ -2,11 +2,17 @@ package models;
 
 import static com.google.common.base.MoreObjects.toStringHelper;
 
+import com.google.common.base.Objects;
+
 public class Rating {
 	
-	public int userId, movieId, rating;
+	public String userId, movieId, rating;
 	
-	public Rating(int userId, int movieId, int rating)
+	public Rating() {
+		  
+	  }
+	
+	public Rating(String userId, String movieId, String rating)
   {
     this.userId = userId;
     this.movieId = movieId;
@@ -21,12 +27,12 @@ public class Rating {
                                .addValue(rating)
                                .toString();
   }
-  /*
+  
   @Override  
   public int hashCode()  
   {  
      return Objects.hashCode(this.userId, this.movieId, this.rating);  
   }
-  */
+  
 }
 

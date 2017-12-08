@@ -19,8 +19,8 @@ import models.Rating;
 	
 public class BestMovie4uAPI {
 	private Serializer serializer;
-	private Map<String, User> userList = new HashMap<>();
-	private Map<String, Movie> moviesList = new HashMap<>();
+	private Map<String, User> users = new HashMap<>();
+	private Map<String, Movie> movieList = new HashMap<>();
 	private Map<String, Rating> ratingList = new HashMap<>();
 	
 	public BestMovie4uAPI() {
@@ -33,55 +33,62 @@ public class BestMovie4uAPI {
 	@SuppressWarnings("unchecked")
 	public void load() throws Exception{
 		serializer.read();
-		userList = (Map<String, User>) serializer.pop();
+		ratingList = (Map<String, Rating>) serializer.pop();
+		movieList = (Map<String, Movie>) serializer.pop();
+		users = (Map<String, User>) serializer.pop();
 	}
 	
 	void store() throws Exception{
-		serializer.push(userList);
+		serializer.push(users);
+		serializer.push(movieList);
+		serializer.push(ratingList);
 		serializer.write();
 	}
 	
-	 public Collection<User> getUsers ()
-	  {
-	    return userList.values();
-	  }
-	
 	public User addUser(String id, String firstName, String lastName,int age,String gender , String occupation){
 		User user = new User (id,firstName, lastName, age,gender,occupation);
-		userList.put(id, user);
+		users.put(id, user);
 		return user;
 	}
 		
-	public void removeUser(String id){
-		userList.remove(id);
+	public void deleteUser(String id){
+		//users.remove(id);
+		User user = users.remove(id);
 	}
+	
 		
-	public void	addMovie(String title, String year, String url){
-			
+		
+	public Movie addMovie(String id, String title, String year, String url){
+			Movie movie = new Movie(id,title, year, url);
+			movieList.put(id, movie);
+			return movie;
 		}
 		
-	public void	addRating(String userID, String movieID, int rating){
-			
-			
+	public Rating addRating(String userID, String movieID, String rating){
+			Rating rate = new Rating(userID, movieID, rating);
+			ratingList.put(userID, rate);
+			return rate;
 		}
 		
 	 public User getUser(String id) 
 	  {
-		 return userList.get(id);
+		 return users.get(id);
 	  }
 	 
-	public void	getMovie(String movieID){
-			
-			
+	 public Collection<User> getUsers(){
+	    return users.values();
+	  }
+	 
+	public  Collection<Movie> getMovies(){
+		return movieList.values();	
 		}
 		
-	public void	getUserRatings(String userID){
-			
-			
+	public Collection<Rating> getUserRatings(){
+		return ratingList.values();
 		}
 		
-	public void	getMoviesByTitle(){
-			
+	public Movie getMoviesByTitle(String title){
+			return movieList.get(title);
 			
 		}
 		
@@ -96,7 +103,7 @@ public class BestMovie4uAPI {
 	
 	
 	
-	@SuppressWarnings("unchecked")
+	/*@SuppressWarnings("unchecked")
 	  void load(File file) throws Exception
 	  {
 	    ObjectInputStream is = null;
@@ -104,7 +111,9 @@ public class BestMovie4uAPI {
 	    {
 	      XStream xstream = new XStream(new DomDriver());
 	      is = xstream.createObjectInputStream(new FileReader(file));
-	      userList = (Map<String, User>) is.readObject();
+	      users = (Map<String, User>) is.readObject();
+	      movieList = (Map<String, Movie>) is.readObject();
+	      ratingList = (Map<String, Rating>) is.readObject();
 	      
 	    }
 	    finally
@@ -116,16 +125,17 @@ public class BestMovie4uAPI {
 	    }
 	  }
 
-	  void store(File file) throws Exception
+	  public void store(File file) throws Exception
 	  {
 	    XStream xstream = new XStream(new DomDriver());
 	    ObjectOutputStream out = xstream.createObjectOutputStream(new FileWriter(file));
-	    out.writeObject(userList);
-	    out.writeObject(moviesList);
+	    out.writeObject(users);
+	    out.writeObject(movieList);
 	    out.writeObject(ratingList);
 	    out.close(); 
 	  }
-			
+
+		*/
 				
 		
 	
