@@ -11,6 +11,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
@@ -107,6 +108,19 @@ public class BestMovie4uAPI {
 	 public User getUser(Long id) 
 	  {
 		 return users.get(id);
+	  }
+	 @SuppressWarnings("unlikely-arg-type")
+	public Movie getMovie(String title) 
+	  {
+		 Set<String> keys = movieList.keySet(); //using keySet to step through the hashmap
+	        for(String key: keys){
+	            if (movieList.get(key).title.contains(title)) {  //if title is in the movie list
+	       	     System.out.println("Here is your Movie Information...");  
+	            return movieList.get(key);
+	            }
+	        }
+	     System.out.println("Sorry that title is not in our Database");  
+		 return null;  
 	  }
 	 
 	 public Collection<User> getUsers(){

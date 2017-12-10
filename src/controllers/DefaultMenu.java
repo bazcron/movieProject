@@ -27,27 +27,27 @@ public class DefaultMenu {
 	    this.name = name;
 	  }
 	//Cliche Shell Commands............................
-		 @Command(description="Get all User details")
+		 @Command(description="Get all Users details")
 		  public void getUsers ()
 		  {
 		    Collection<User> users = bestMovie4uApi.getUsers();
 		    System.out.println(users);
 		  }
-		 @Command(description="Get a Users detail")
+		 @Command(description="Get a Users details")
 		  public void getUser (@Param(name="id") Long id)
 		  {
 		    User user = bestMovie4uApi.getUser(id);
 		    System.out.println(user);
 		  }
-		 @Command(description="Delete a User")
+		 /*@Command(description="Delete a User")
 		  public void deleteUser (@Param(name="id") Long id)
 		  {
 		    Optional<User> user = Optional.ofNullable(bestMovie4uApi.getUser(id));
 		    if (user.isPresent())
 		    {
-		    	bestMovie4uApi.deleteUser(user.get().id);
+		    	bestMovie4uApi.deleteUser(user.get().userId);
 		    }
-		  }
+		  }*/
 		 @Command(description="Get all Movie details")
 		  public void getMovies ()
 		  {

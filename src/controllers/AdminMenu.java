@@ -43,8 +43,16 @@ public class AdminMenu {
 	  public void getUser (@Param(name="id") Long id)
 	  {
 	    User user = bestMovie4uApi.getUser(id);
-	    System.out.println(id);  //...................take out
 	    System.out.println(user);
+	  }
+	 @Command(description="Get Movie by Title")
+	  public void getMovie (@Param(name="title") String title)
+	  {
+		 Movie movie = bestMovie4uApi.getMovie(title);
+		 if(movie != null) {
+			 System.out.println(movie);
+		 }
+		 
 	  }
 	 @Command(description="Delete a User")
 	  public void deleteUser (@Param(name="id") Long id)
@@ -52,7 +60,7 @@ public class AdminMenu {
 	    Optional<User> user = Optional.ofNullable(bestMovie4uApi.getUser(id));
 	    if (user.isPresent())
 	    {
-	    	bestMovie4uApi.deleteUser(user.get().id);
+	    	bestMovie4uApi.deleteUser(user.get().userId);
 	    }
 	  }
 	 @Command(description="Get all Movie details")
@@ -61,6 +69,7 @@ public class AdminMenu {
 	    Collection<Movie> moviesList = bestMovie4uApi.getMovies();
 	    System.out.println(moviesList);
 	  }
+	 
 	 @Command(description="Get all Rating details")
 	  public void getRating ()
 	  {

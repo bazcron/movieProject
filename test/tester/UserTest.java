@@ -24,7 +24,6 @@ public class UserTest
   @Test
   public void testCreate()
   {
-	assertEquals (6, homer.id);
     assertEquals ("homer", homer.firstName);
     assertEquals ("simpson", homer.lastName);
     assertEquals("secret", homer.password);

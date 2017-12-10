@@ -20,10 +20,10 @@ public class Fixtures
 	  };
   public static Rating[] ratingList =
 	  {
-		  new Rating ("marge", "simpson", "marge@simpson.com"),
-		   new Rating ("lisa",  "simpson", "lisa@simpson.com"),
-		    new Rating ("bart",  "simpson", "bart@simpson.com"),
-		    new Rating ("maggie","simpson", "maggie@simpson.com"),
+		  new Rating (1,"marge", "simpson", "marge@simpson.com"),
+		   new Rating (2,"lisa",  "simpson", "lisa@simpson.com"),
+		    new Rating (3,"bart",  "simpson", "bart@simpson.com"),
+		    new Rating (4,"maggie","simpson", "maggie@simpson.com"),
 	  };
   
 }
