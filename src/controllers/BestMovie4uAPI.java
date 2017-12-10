@@ -1,11 +1,19 @@
 package controllers;
 
 import models.User;
+
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+
+import com.google.common.collect.HashBasedTable;
+import com.google.common.collect.Table;
+
 import Utils.FileLogger;
 import Utils.Serializer;
 import models.Movie;
@@ -17,8 +25,7 @@ public class BestMovie4uAPI {
 	private Map<String, Movie> movieList = new HashMap<>();
 	private Map<Long, Rating> ratingList = new HashMap<>();
 	Optional<User> currentUser;
-
-	
+		
 	public BestMovie4uAPI() {
 	}
 	
@@ -94,7 +101,30 @@ public class BestMovie4uAPI {
 			ratingList.put(ratingCounter, rate);
 			return rate;
 		}
+	/*public void topTenMovies(){
+		ArrayList movieId = new ArrayList();
+		ArrayList movieRatings = new ArrayList();
+		ArrayList movieNumOfRatings = new ArrayList();
 		
+		Set<Long> keys = ratingList.keySet(); //using keySet to step through the hashmap
+        for(Long key: keys){
+        	String movieValue = ratingList.get(key).movieId;
+        	String ratingValue = ratingList.get(key).rating;
+        	int movieNum = Integer.parseInt(movieValue);
+        	int ratingNum = Integer.parseInt(ratingValue);
+        	
+        	movieId.set(movieNum, movieNum);
+        	int addValue = (int) movieRatings.get(movieNum);
+        	addValue+=ratingNum;
+        	movieRatings.set(movieNum, addValue);
+        	int incValues = (int) movieNumOfRatings.get(movieNum);
+        	incValues++;
+        	movieNumOfRatings.set(movieNum, incValues);
+        }
+	}*/
+	public <T> void sortMovies(){
+		
+	}
 	 public User getUser(Long id) 
 	  {
 		 return users.get(id);
@@ -127,8 +157,8 @@ public class BestMovie4uAPI {
 		
 	public Movie getMoviesByTitle(String title){
 			return movieList.get(title);
-			
 		}
+	
 		
 	public void	getMoviesByYear(){ 
 		

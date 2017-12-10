@@ -14,7 +14,7 @@
                 <lastName>...</lastName>
                 <userId>0</userId>
                 <age>24</age>
-                <password>default</password>
+                <password>user</password>
                 <role>user</role>
                 <gender>M</gender>
                 <occupation>technician</occupation>

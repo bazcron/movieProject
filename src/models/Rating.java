@@ -30,6 +30,7 @@ public class Rating {
                                .toString();
   }
   
+  
   @Override  
   public int hashCode()  
   {  
