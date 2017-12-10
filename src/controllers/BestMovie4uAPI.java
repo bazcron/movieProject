@@ -1,21 +1,11 @@
 package controllers;
 
-	import models.User;
-
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import models.User;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
-
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.xml.DomDriver;
-
 import Utils.FileLogger;
 import Utils.Serializer;
 import models.Movie;
@@ -87,8 +77,8 @@ public class BestMovie4uAPI {
 	}
 		
 	public void deleteUser(long id){
-		//users.remove(id);
-		User user = users.remove(id);
+		users.remove(id);
+		//User user = users.remove(id);
 	}
 	
 		
@@ -109,7 +99,7 @@ public class BestMovie4uAPI {
 	  {
 		 return users.get(id);
 	  }
-	 @SuppressWarnings("unlikely-arg-type")
+	 
 	public Movie getMovie(String title) 
 	  {
 		 Set<String> keys = movieList.keySet(); //using keySet to step through the hashmap

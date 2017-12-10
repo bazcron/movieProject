@@ -39,15 +39,6 @@ public class DefaultMenu {
 		    User user = bestMovie4uApi.getUser(id);
 		    System.out.println(user);
 		  }
-		 /*@Command(description="Delete a User")
-		  public void deleteUser (@Param(name="id") Long id)
-		  {
-		    Optional<User> user = Optional.ofNullable(bestMovie4uApi.getUser(id));
-		    if (user.isPresent())
-		    {
-		    	bestMovie4uApi.deleteUser(user.get().userId);
-		    }
-		  }*/
 		 @Command(description="Get all Movie details")
 		  public void getMovies ()
 		  {

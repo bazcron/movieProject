@@ -10,12 +10,12 @@
             <entry>
               <long>0</long>
               <models.User>
-                <firstName>Admin</firstName>
+                <firstName>user</firstName>
                 <lastName>...</lastName>
                 <userId>0</userId>
                 <age>24</age>
-                <role>admin</role>
-                <password>secret</password>
+                <password>default</password>
+                <role>user</role>
                 <gender>M</gender>
                 <occupation>technician</occupation>
               </models.User>
@@ -27,6 +27,19 @@
                 <lastName>Hernandez</lastName>
                 <userId>1</userId>
                 <age>24</age>
+                <gender>M</gender>
+                <occupation>technician</occupation>
+              </models.User>
+            </entry>
+            <entry>
+              <long>-99</long>
+              <models.User>
+                <firstName>Admin</firstName>
+                <lastName>...</lastName>
+                <userId>0</userId>
+                <age>24</age>
+                <password>secret</password>
+                <role>admin</role>
                 <gender>M</gender>
                 <occupation>technician</occupation>
               </models.User>
@@ -73,6 +86,19 @@
                 <age>33</age>
                 <gender>F</gender>
                 <occupation>other</occupation>
+              </models.User>
+            </entry>
+            <entry>
+              <long>200</long>
+              <models.User>
+                <firstName>john</firstName>
+                <lastName>smith</lastName>
+                <userId>200</userId>
+                <age>23</age>
+                <password>password</password>
+                <role>role</role>
+                <gender>m</gender>
+                <occupation>this</occupation>
               </models.User>
             </entry>
           </map>
