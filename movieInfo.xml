@@ -8,56 +8,68 @@
         <elementData>
           <map>
             <entry>
-              <string>1</string>
+              <long>0</long>
               <models.User>
-                <firstName>Leonard</firstName>
-                <lastName>Hernandez</lastName>
+                <firstName>Admin</firstName>
+                <lastName>...</lastName>
+                <userId>0</userId>
                 <age>24</age>
-                <id>1</id>
+                <password>secret</password>
                 <gender>M</gender>
                 <occupation>technician</occupation>
               </models.User>
             </entry>
             <entry>
-              <string>2</string>
+              <long>1</long>
+              <models.User>
+                <firstName>Leonard</firstName>
+                <lastName>Hernandez</lastName>
+                <userId>1</userId>
+                <age>24</age>
+                <gender>M</gender>
+                <occupation>technician</occupation>
+              </models.User>
+            </entry>
+            <entry>
+              <long>2</long>
               <models.User>
                 <firstName>Melody</firstName>
                 <lastName>Roberson</lastName>
+                <userId>2</userId>
                 <age>53</age>
-                <id>2</id>
                 <gender>F</gender>
                 <occupation>other</occupation>
               </models.User>
             </entry>
             <entry>
-              <string>3</string>
+              <long>3</long>
               <models.User>
                 <firstName>Gregory</firstName>
                 <lastName>Newton</lastName>
+                <userId>3</userId>
                 <age>23</age>
-                <id>3</id>
                 <gender>M</gender>
                 <occupation>writer</occupation>
               </models.User>
             </entry>
             <entry>
-              <string>4</string>
+              <long>4</long>
               <models.User>
                 <firstName>Oliver</firstName>
                 <lastName>George</lastName>
+                <userId>4</userId>
                 <age>24</age>
-                <id>4</id>
                 <gender>M</gender>
                 <occupation>technician</occupation>
               </models.User>
             </entry>
             <entry>
-              <string>5</string>
+              <long>5</long>
               <models.User>
                 <firstName>Jenna</firstName>
                 <lastName>Parker</lastName>
+                <userId>5</userId>
                 <age>33</age>
-                <id>5</id>
                 <gender>F</gender>
                 <occupation>other</occupation>
               </models.User>
@@ -157,43 +169,453 @@
           </map>
           <map>
             <entry>
-              <string>1</string>
+              <long>2</long>
               <models.Rating>
-                <userId>1</userId>
+                <ratingCounter>2</ratingCounter>
+                <userId>2</userId>
+                <movieId>10</movieId>
+                <rating>1</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>3</long>
+              <models.Rating>
+                <ratingCounter>3</ratingCounter>
+                <userId>2</userId>
+                <movieId>10</movieId>
+                <rating>1</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>4</long>
+              <models.Rating>
+                <ratingCounter>4</ratingCounter>
+                <userId>4</userId>
                 <movieId>10</movieId>
                 <rating>3</rating>
               </models.Rating>
             </entry>
             <entry>
-              <string>2</string>
+              <long>5</long>
               <models.Rating>
-                <userId>2</userId>
+                <ratingCounter>5</ratingCounter>
+                <userId>4</userId>
                 <movieId>10</movieId>
                 <rating>5</rating>
               </models.Rating>
             </entry>
             <entry>
-              <string>3</string>
+              <long>6</long>
               <models.Rating>
+                <ratingCounter>6</ratingCounter>
+                <userId>5</userId>
+                <movieId>10</movieId>
+                <rating>-5</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>7</long>
+              <models.Rating>
+                <ratingCounter>7</ratingCounter>
+                <userId>1</userId>
+                <movieId>1</movieId>
+                <rating>3</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>8</long>
+              <models.Rating>
+                <ratingCounter>8</ratingCounter>
+                <userId>1</userId>
+                <movieId>1</movieId>
+                <rating>5</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>9</long>
+              <models.Rating>
+                <ratingCounter>9</ratingCounter>
+                <userId>2</userId>
+                <movieId>1</movieId>
+                <rating>5</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>10</long>
+              <models.Rating>
+                <ratingCounter>10</ratingCounter>
+                <userId>2</userId>
+                <movieId>1</movieId>
+                <rating>1</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>11</long>
+              <models.Rating>
+                <ratingCounter>11</ratingCounter>
+                <userId>3</userId>
+                <movieId>1</movieId>
+                <rating>3</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>12</long>
+              <models.Rating>
+                <ratingCounter>12</ratingCounter>
+                <userId>4</userId>
+                <movieId>1</movieId>
+                <rating>5</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>13</long>
+              <models.Rating>
+                <ratingCounter>13</ratingCounter>
+                <userId>5</userId>
+                <movieId>1</movieId>
+                <rating>3</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>14</long>
+              <models.Rating>
+                <ratingCounter>14</ratingCounter>
+                <userId>1</userId>
+                <movieId>2</movieId>
+                <rating>5</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>15</long>
+              <models.Rating>
+                <ratingCounter>15</ratingCounter>
+                <userId>2</userId>
+                <movieId>2</movieId>
+                <rating>3</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>16</long>
+              <models.Rating>
+                <ratingCounter>16</ratingCounter>
+                <userId>2</userId>
+                <movieId>2</movieId>
+                <rating>1</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>17</long>
+              <models.Rating>
+                <ratingCounter>17</ratingCounter>
+                <userId>3</userId>
+                <movieId>2</movieId>
+                <rating>-5</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>18</long>
+              <models.Rating>
+                <ratingCounter>18</ratingCounter>
+                <userId>5</userId>
+                <movieId>2</movieId>
+                <rating>1</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>19</long>
+              <models.Rating>
+                <ratingCounter>19</ratingCounter>
+                <userId>1</userId>
+                <movieId>3</movieId>
+                <rating>3</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>20</long>
+              <models.Rating>
+                <ratingCounter>20</ratingCounter>
+                <userId>2</userId>
+                <movieId>3</movieId>
+                <rating>3</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>21</long>
+              <models.Rating>
+                <ratingCounter>21</ratingCounter>
+                <userId>3</userId>
+                <movieId>3</movieId>
+                <rating>1</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>22</long>
+              <models.Rating>
+                <ratingCounter>22</ratingCounter>
+                <userId>3</userId>
+                <movieId>3</movieId>
+                <rating>-3</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>23</long>
+              <models.Rating>
+                <ratingCounter>23</ratingCounter>
+                <userId>4</userId>
+                <movieId>3</movieId>
+                <rating>5</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>24</long>
+              <models.Rating>
+                <ratingCounter>24</ratingCounter>
+                <userId>5</userId>
+                <movieId>3</movieId>
+                <rating>1</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>25</long>
+              <models.Rating>
+                <ratingCounter>25</ratingCounter>
+                <userId>2</userId>
+                <movieId>4</movieId>
+                <rating>-5</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>26</long>
+              <models.Rating>
+                <ratingCounter>26</ratingCounter>
+                <userId>3</userId>
+                <movieId>4</movieId>
+                <rating>-3</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>27</long>
+              <models.Rating>
+                <ratingCounter>27</ratingCounter>
+                <userId>3</userId>
+                <movieId>4</movieId>
+                <rating>1</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>28</long>
+              <models.Rating>
+                <ratingCounter>28</ratingCounter>
+                <userId>4</userId>
+                <movieId>4</movieId>
+                <rating>1</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>29</long>
+              <models.Rating>
+                <ratingCounter>29</ratingCounter>
+                <userId>4</userId>
+                <movieId>4</movieId>
+                <rating>5</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>30</long>
+              <models.Rating>
+                <ratingCounter>30</ratingCounter>
+                <userId>4</userId>
+                <movieId>4</movieId>
+                <rating>5</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>31</long>
+              <models.Rating>
+                <ratingCounter>31</ratingCounter>
+                <userId>5</userId>
+                <movieId>4</movieId>
+                <rating>-5</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>32</long>
+              <models.Rating>
+                <ratingCounter>32</ratingCounter>
+                <userId>5</userId>
+                <movieId>4</movieId>
+                <rating>-5</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>33</long>
+              <models.Rating>
+                <ratingCounter>33</ratingCounter>
+                <userId>1</userId>
+                <movieId>5</movieId>
+                <rating>3</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>34</long>
+              <models.Rating>
+                <ratingCounter>34</ratingCounter>
+                <userId>1</userId>
+                <movieId>5</movieId>
+                <rating>-3</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>35</long>
+              <models.Rating>
+                <ratingCounter>35</ratingCounter>
+                <userId>3</userId>
+                <movieId>5</movieId>
+                <rating>-5</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>36</long>
+              <models.Rating>
+                <ratingCounter>36</ratingCounter>
+                <userId>3</userId>
+                <movieId>5</movieId>
+                <rating>-5</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>37</long>
+              <models.Rating>
+                <ratingCounter>37</ratingCounter>
+                <userId>5</userId>
+                <movieId>5</movieId>
+                <rating>-3</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>38</long>
+              <models.Rating>
+                <ratingCounter>38</ratingCounter>
+                <userId>4</userId>
+                <movieId>6</movieId>
+                <rating>1</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>39</long>
+              <models.Rating>
+                <ratingCounter>39</ratingCounter>
+                <userId>1</userId>
+                <movieId>7</movieId>
+                <rating>1</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>40</long>
+              <models.Rating>
+                <ratingCounter>40</ratingCounter>
+                <userId>2</userId>
+                <movieId>7</movieId>
+                <rating>3</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>41</long>
+              <models.Rating>
+                <ratingCounter>41</ratingCounter>
+                <userId>3</userId>
+                <movieId>7</movieId>
+                <rating>-5</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>42</long>
+              <models.Rating>
+                <ratingCounter>42</ratingCounter>
+                <userId>4</userId>
+                <movieId>7</movieId>
+                <rating>3</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>43</long>
+              <models.Rating>
+                <ratingCounter>43</ratingCounter>
+                <userId>5</userId>
+                <movieId>7</movieId>
+                <rating>3</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>44</long>
+              <models.Rating>
+                <ratingCounter>44</ratingCounter>
                 <userId>3</userId>
                 <movieId>8</movieId>
                 <rating>5</rating>
               </models.Rating>
             </entry>
             <entry>
-              <string>4</string>
+              <long>45</long>
               <models.Rating>
+                <ratingCounter>45</ratingCounter>
                 <userId>4</userId>
                 <movieId>8</movieId>
                 <rating>3</rating>
               </models.Rating>
             </entry>
             <entry>
-              <string>5</string>
+              <long>46</long>
               <models.Rating>
+                <ratingCounter>46</ratingCounter>
+                <userId>5</userId>
+                <movieId>8</movieId>
+                <rating>1</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>47</long>
+              <models.Rating>
+                <ratingCounter>47</ratingCounter>
+                <userId>1</userId>
+                <movieId>9</movieId>
+                <rating>1</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>48</long>
+              <models.Rating>
+                <ratingCounter>48</ratingCounter>
                 <userId>5</userId>
                 <movieId>9</movieId>
                 <rating>-5</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>49</long>
+              <models.Rating>
+                <ratingCounter>49</ratingCounter>
+                <userId>1</userId>
+                <movieId>10</movieId>
+                <rating>3</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>50</long>
+              <models.Rating>
+                <ratingCounter>50</ratingCounter>
+                <userId>1</userId>
+                <movieId>10</movieId>
+                <rating>3</rating>
+              </models.Rating>
+            </entry>
+            <entry>
+              <long>51</long>
+              <models.Rating>
+                <ratingCounter>51</ratingCounter>
+                <userId>2</userId>
+                <movieId>10</movieId>
+                <rating>5</rating>
               </models.Rating>
             </entry>
           </map>

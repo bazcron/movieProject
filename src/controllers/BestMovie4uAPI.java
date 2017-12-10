@@ -10,18 +10,23 @@ import java.io.ObjectOutputStream;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
+
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
+import Utils.FileLogger;
 import Utils.Serializer;
 import models.Movie;
 import models.Rating;
 	
 public class BestMovie4uAPI {
 	private Serializer serializer;
-	private Map<String, User> users = new HashMap<>();
+	private Map<Long, User> users = new HashMap<>();
 	private Map<String, Movie> movieList = new HashMap<>();
-	private Map<String, Rating> ratingList = new HashMap<>();
+	private Map<Long, Rating> ratingList = new HashMap<>();
+	Optional<User> currentUser;
+
 	
 	public BestMovie4uAPI() {
 	}
@@ -30,12 +35,32 @@ public class BestMovie4uAPI {
 		this.serializer = MovieSerializer;
 	}
 	
+	// simplified login method
+	  public boolean login(Long userName, String password) {
+	    Optional<User> user = Optional.ofNullable(users.get(userName));
+	    if (user.isPresent() && user.get().password.equals(password)) {
+	      currentUser = user;
+	      FileLogger.getLogger().log(currentUser.get().firstName+ " "+ currentUser.get().lastName + " is logged in...");
+	      return true;
+	    }
+	    return false;
+	  }
+	  
+	  // simplified logout method
+	  public void logout() {
+	    Optional<User> user = currentUser;
+	    if (user.isPresent()) {
+	      FileLogger.getLogger().log(currentUser.get().firstName + " "+ currentUser.get().lastName  +" has been logged out...");
+	      currentUser = Optional.empty();
+	    }
+	  }
+	
 	@SuppressWarnings("unchecked")
 	public void load() throws Exception{
 		serializer.read();
-		ratingList = (Map<String, Rating>) serializer.pop();
+		ratingList = (Map<Long, Rating>) serializer.pop();
 		movieList = (Map<String, Movie>) serializer.pop();
-		users = (Map<String, User>) serializer.pop();
+		users = (Map<Long, User>) serializer.pop();
 	}
 	
 	void store() throws Exception{
@@ -45,13 +70,22 @@ public class BestMovie4uAPI {
 		serializer.write();
 	}
 	
-	public User addUser(String id, String firstName, String lastName,int age,String gender , String occupation){
+	//this is the initial addUser if reading from user.dat file if creating the xml file for the first time 
+	public User addUser(long id, String firstName, String lastName,int age,String gender , String occupation){
 		User user = new User (id,firstName, lastName, age,gender,occupation);
 		users.put(id, user);
 		return user;
 	}
+	//this addUser is used in Admin mode
+	public User addUser(long id, String firstName, String lastName, String password, String role, int age,
+			String gender, String occupation) {
+		User user = new User (id,firstName, lastName, password,role,age,gender,occupation);
+		users.put(id, user);
+		return user;
 		
-	public void deleteUser(String id){
+	}
+		
+	public void deleteUser(long id){
 		//users.remove(id);
 		User user = users.remove(id);
 	}
@@ -64,13 +98,13 @@ public class BestMovie4uAPI {
 			return movie;
 		}
 		
-	public Rating addRating(String userID, String movieID, String rating){
-			Rating rate = new Rating(userID, movieID, rating);
-			ratingList.put(userID, rate);
+	public Rating addRating(long ratingCounter, String userID, String movieID, String rating){
+			Rating rate = new Rating(ratingCounter,userID, movieID, rating);
+			ratingList.put(ratingCounter, rate);
 			return rate;
 		}
 		
-	 public User getUser(String id) 
+	 public User getUser(Long id) 
 	  {
 		 return users.get(id);
 	  }
@@ -99,45 +133,8 @@ public class BestMovie4uAPI {
 	public void	initialLoad(Object csvFile){
 			
 		}
-	
-	
-	
-	
-	/*@SuppressWarnings("unchecked")
-	  void load(File file) throws Exception
-	  {
-	    ObjectInputStream is = null;
-	    try
-	    {
-	      XStream xstream = new XStream(new DomDriver());
-	      is = xstream.createObjectInputStream(new FileReader(file));
-	      users = (Map<String, User>) is.readObject();
-	      movieList = (Map<String, Movie>) is.readObject();
-	      ratingList = (Map<String, Rating>) is.readObject();
-	      
-	    }
-	    finally
-	    {
-	      if (is != null)
-	      {
-	        is.close();
-	      }
-	    }
-	  }
 
-	  public void store(File file) throws Exception
-	  {
-	    XStream xstream = new XStream(new DomDriver());
-	    ObjectOutputStream out = xstream.createObjectOutputStream(new FileWriter(file));
-	    out.writeObject(users);
-	    out.writeObject(movieList);
-	    out.writeObject(ratingList);
-	    out.close(); 
-	  }
-
-		*/
-				
-		
+	
 	
 }
 

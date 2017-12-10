@@ -6,14 +6,16 @@ import com.google.common.base.Objects;
 
 public class Rating {
 	
+	Long ratingCounter;
 	public String userId, movieId, rating;
-	
+	static Long   counter = 0l;
 	public Rating() {
 		  
 	  }
 	
-	public Rating(String userId, String movieId, String rating)
+	public Rating(long ratingCounter, String userId, String movieId, String rating)
   {
+	this.ratingCounter= ratingCounter;
     this.userId = userId;
     this.movieId = movieId;
     this.rating = rating;

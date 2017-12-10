@@ -9,19 +9,27 @@ import org.junit.Test;
 
 import models.User;
 
+import static com.google.common.base.MoreObjects.toStringHelper;
 import static models.Fixtures.users;
 
 public class UserTest
 {
-  User homer = new User ("6","homer", "simpson", 5, "m", "plumber");
+	public String firstName,lastName,password,role,gender,occupation;
+	public int age;
+	public Long id;
+
+  User homer = new User (6,"homer", "simpson","secret","default", 40, "m", "plumber");
+  
 
   @Test
   public void testCreate()
   {
-	assertEquals ("6", homer.id);
+	assertEquals (6, homer.id);
     assertEquals ("homer", homer.firstName);
     assertEquals ("simpson", homer.lastName);
-    assertEquals (5,   homer.age);   
+    assertEquals("secret", homer.password);
+    assertEquals("default", homer.role);
+    assertEquals (40,   homer.age);   
     assertEquals ("m", homer.gender);
     assertEquals ("plumber", homer.occupation);
   }
@@ -40,15 +48,28 @@ public class UserTest
   @Test
   public void testToString()
   {
-    assertEquals ("User{" + " 6, homer, simpson, 5, m, plumber}", homer.toString());
+    assertEquals ("models.User\n{\n  \\\"id\\\": 6,\\n\""
+    	+ "\"firstName\": \"homer\",\n"
+        + "  \"lastName\": \"simpson\",\n"
+        + "  \"password\": \"secret\",\n"
+        + "  \"role\": \"default\",\n"
+        + "  \"age\": 40,\n"
+        + "  \"gender\": \"male\"\n"
+        + "  \"occupation\": \"plumber\"\n"
+        + "}", homer.toString());
   }
+ /* @Test
+  public void testToString()
+  {
+    assertEquals ("User{" + " 6, homer, simpson, secret,default,40, m, plumber}", homer.toString());
+  }*/
   
   @Test
   public void getUsers()
   {
-	 // Collection<User> users = bestMovie4uApi.getUsers();
+	 //Collection<User> users = homer.getUsers();
 	  
-		 System.out.println(users);
+		// System.out.println(users);
   }
   
 }
